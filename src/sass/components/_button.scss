@@ -1,0 +1,62 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.btn {
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: 1.6rem 2.7rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.225rem;
+  position: relative;
+  z-index: 1;
+  background: variables.$btn-color;
+  color: variables.$white-text;
+
+  &::after {
+    content: "";
+    width: 0;
+    height: 100%;
+    background: variables.$text-color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.35s width cubic-bezier(0.75, 0.01, 0.58, 1);
+    z-index: -1;
+  }
+
+  &:hover::after {
+    @include mixins.hover-supported() {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 25em) {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  &--resume {
+    font-size: 1.5rem;
+    padding: 1.2rem 2rem;
+
+    @media only screen and (max-width: 22em) {
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  &--hide {
+    @media only screen and (max-width: 64em) {
+      display: none;
+    }
+  }
+
+  &--form {
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

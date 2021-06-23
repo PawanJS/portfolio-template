@@ -1,0 +1,179 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+// Desktop navigation
+.navigation {
+  grid-template-columns: 1fr 0.5fr 1fr;
+  transition: all 0.5s;
+  padding: 5rem 3rem 0 3rem;
+
+  @media only screen and (max-width: 64em) {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center start;
+  }
+
+  &__logo {
+    @media only screen and (max-width: 64em) {
+      z-index: 10;
+    }
+  }
+
+  &__link-container {
+    justify-self: start;
+
+    & .btn--resume {
+      display: none;
+
+      @media only screen and (max-width: 64em) {
+        display: block;
+        margin-top: 3rem;
+      }
+    }
+
+    @media only screen and (max-width: 64em) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: variables.$white-bg;
+      overflow-y: scroll;
+      padding: 5rem 3rem;
+      position: fixed;
+      top: 5rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: all 0.5s;
+    }
+
+    @media only screen and (max-width: 25em) {
+      padding: 3rem;
+    }
+
+    // class added with JS to show menu links in mobile view
+    &-active {
+      @media only screen and (max-width: 64em) {
+        transform: translate(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: 64em) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+
+    &--item {
+      &:hover &-link::before {
+        @include mixins.hover-supported() {
+          height: 100%;
+        }
+      }
+
+      &:hover &-link {
+        @include mixins.hover-supported() {
+          color: variables.$white-text;
+        }
+      }
+
+      @media only screen and (max-width: 64em) {
+        padding: 4rem 0;
+      }
+
+      &-link {
+        font-weight: 600;
+        color: variables.$text-color;
+        font-size: 1.5rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.225rem;
+        padding: 0.8rem;
+        position: relative;
+        transition: 0.35s color cubic-bezier(0.75, 0.01, 0.58, 1);
+
+        &::before {
+          content: "";
+          width: 100%;
+          height: 0;
+          background-color: variables.$btn-color;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: -1;
+          transition: 0.35s all cubic-bezier(0.75, 0.01, 0.58, 1);
+        }
+
+        @media only screen and (max-width: 64em) {
+          padding: 3rem 8rem;
+        }
+
+        @media only screen and (max-width: 30em) {
+          padding: 3rem;
+        }
+      }
+    }
+  }
+
+  &--icon {
+    &-box {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: none;
+      justify-self: end;
+
+      @media only screen and (max-width: 64em) {
+        display: block;
+      }
+    }
+
+    &-top,
+    &-bottom,
+    &-center {
+      background: #000;
+      width: 35px;
+      height: 2.5px;
+      border-radius: 10rem;
+      transition: all 0.3s;
+    }
+
+    &-top {
+      margin-bottom: 5px;
+    }
+
+    &-bottom {
+      margin-top: 5px;
+    }
+
+    // Classes to add with javascript to active mobile nav Icon
+    &-active &-center {
+      background-color: transparent;
+    }
+    &-active &-top {
+      transform: rotate(227deg) translate(-1px, -1px);
+      margin: 0;
+    }
+    &-active &-bottom {
+      transform: rotate(-227deg) translate(-2px, 3px);
+      margin: 0;
+    }
+  }
+
+  &-active {
+    @media only screen and (max-width: 64em) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: variables.$white-bg;
+      z-index: 10;
+    }
+  }
+}

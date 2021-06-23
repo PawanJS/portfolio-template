@@ -1,0 +1,56 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.portfolio {
+  &--heading {
+    grid-column: 1 / -1;
+  }
+
+  &--container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    gap: 3rem;
+
+    @media only screen and (max-width: 35em) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &--text-box {
+    padding: 3rem;
+    transition: 0.35s transform cubic-bezier(0.75, 0.01, 0.58, 1);
+    border-radius: 1rem;
+
+    &:hover {
+      @include mixins.hover-supported() {
+        transform: translateY(-1rem);
+      }
+    }
+
+    &:nth-of-type(1) {
+      background-color: variables.$div-color;
+      box-shadow: 0 1rem 3rem variables.$div-color;
+    }
+
+    &:nth-of-type(2) {
+      background-color: variables.$body-color;
+      box-shadow: 0 1rem 3rem variables.$body-color;
+    }
+
+    &:nth-of-type(3) {
+      background-color: variables.$div-color-2;
+      box-shadow: 0 1rem 3rem variables.$div-color-2;
+    }
+
+    strong {
+      font-size: 1.8rem;
+      line-height: 2.816rem;
+      letter-spacing: 0.0176rem;
+
+      @media only screen and (max-width: 30em) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

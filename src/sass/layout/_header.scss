@@ -1,0 +1,19 @@
+.header {
+  &__hero-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    grid-column-gap: 2rem;
+
+    @media only screen and (max-width: 50em) {
+      grid-template-columns: 1fr;
+      place-items: start;
+    }
+  }
+
+  &--img {
+    @media only screen and (max-width: 50em) {
+      display: none;
+    }
+  }
+}

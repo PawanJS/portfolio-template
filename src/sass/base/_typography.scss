@@ -1,0 +1,61 @@
+@use "../abstracts/variables";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+body {
+  font-family: "Roboto", "sans-serif";
+  font-weight: 400;
+  color: variables.$text-color;
+}
+
+.heading-1 {
+  font-size: clamp(2.2rem, calc(2rem + 1.4vw), 4.4rem);
+  letter-spacing: 0.0672rem;
+
+  @supports not (font-size: clamp(2.2rem, calc(2rem + 1.4vw), 4.4rem)) {
+    font-size: calc(2rem + 1.4vw);
+  }
+}
+
+.heading-2 {
+  font-size: clamp(2rem, calc(2rem + 1vw), 3.8rem);
+  letter-spacing: 0.0576rem;
+  line-height: 5.07494rem;
+
+  @media only screen and (max-width: 70em) {
+    line-height: 4.4rem;
+  }
+
+  @media only screen and (max-width: 45em) {
+    line-height: 3.4rem;
+  }
+
+  @supports not (font-size: clamp(2rem, calc(2rem + 1vw), 3.8rem)) {
+    font-size: calc(2rem + 1vw);
+  }
+}
+
+.paragraph {
+  font-size: clamp(1.5rem, 2vw, 1.7rem);
+  line-height: 2.816rem;
+  letter-spacing: 0.0176rem;
+
+  @supports not (font-size: clamp(1.5rem, 2vw, 1.7rem)) {
+    font-size: 1.6rem;
+  }
+
+  @media only screen and (max-width: 64em) {
+    line-height: 2.516rem;
+
+    @supports not (font-size: clamp(1.5rem, 2vw, 1.7rem)) {
+      font-size: 1.5rem;
+    }
+  }
+}

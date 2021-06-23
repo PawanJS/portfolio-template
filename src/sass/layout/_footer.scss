@@ -1,0 +1,6 @@
+@use "../abstracts/variables";
+
+.footer {
+  background-color: variables.$text-color;
+  color: variables.$white-text;
+}

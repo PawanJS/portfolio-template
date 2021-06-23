@@ -1,0 +1,43 @@
+@use "../abstracts/variables";
+
+.contact {
+  background-color: #f8fafc;
+}
+
+.form {
+  label {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  &--element-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--name,
+  &--email,
+  &--message {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: inherit;
+    background-color: variables.$light-color-bg;
+  }
+
+  &--name:focus,
+  &--email:focus,
+  &--message:focus {
+    outline: none;
+    box-shadow: 0 1rem 3rem rgba(variables.$light-color-bg, 0.5);
+  }
+
+  &--error {
+    font-size: 1.5rem;
+    color: variables.$btn-color;
+  }
+}

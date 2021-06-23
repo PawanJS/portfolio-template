@@ -1,0 +1,14 @@
+.about {
+  &--text {
+    letter-spacing: 0.48rem;
+    font-size: clamp(1.7rem, 2vw, 1.92rem);
+
+    @supports not (font-size: clamp(1.7rem, 2vw, 1.92rem)) {
+      font-size: 1.9rem;
+
+      @media only screen and (max-width: 30em) {
+        font-size: 1.7rem;
+      }
+    }
+  }
+}
