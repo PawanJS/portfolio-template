@@ -161,7 +161,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Pawan JS - [Say Hie](https://www.pawanjs.xyz/#contact)
 
-Project Link: [https://github.com/PawanJS/forkify](https://github.com/PawanJS/forkify)
+Project Link: [Click Here](https://github.com/PawanJS/portfolio-template)
+
+Design Link: [Click Here](https://www.figma.com/file/b5aknDwLMYXp7ZAEmK2oD6/Portfolio?node-id=0%3A1)
 
 <!-- ACKNOWLEDGEMENTS -->
 
