@@ -99,12 +99,11 @@ Start with the latest version of NPM to avoid any errors:
 
 ### Installation
 
-1. Get a free API Key at [Forkify API_KEY](https://portfolio-template-api.herokuapp.com/v2)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/PawanJS_/portfolio-template.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
