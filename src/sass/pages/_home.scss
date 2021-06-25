@@ -1,0 +1,11 @@
+@use "../abstracts/variables";
+
+.link {
+  text-decoration: none;
+  color: variables.$btn-color;
+  transition: all 0.3s;
+
+  &:hover {
+    color: variables.$white-text;
+  }
+}

@@ -133,7 +133,7 @@ See the [open issues](https://github.com/PawanJS/portfolio-template/issues) for 
 
 2. Refactoring of code according to MVC.
 
-3. Lesser or optimizes CSS
+3. Lesser or optimized CSS
 
 4. PWA for offline working
 
