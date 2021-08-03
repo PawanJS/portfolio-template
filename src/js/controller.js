@@ -13,7 +13,6 @@ const allSection = document.querySelectorAll('section');
 const scrollToTopBtn = document.querySelector('.js-scrollToTop');
 
 // Navigation
-
 const menuToggler = function () {
   const menuBox = document.querySelector('.js-list');
   const body = document.body;
