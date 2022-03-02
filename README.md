@@ -158,7 +158,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Pawan JS - [Say Hie](https://www.pawanjs.xyz/contact)
+Pawan JS - [Say Hie](https://www.pawanjs.com/)
 
 Project Link: [Click Here](https://github.com/PawanJS/portfolio-template)
 
